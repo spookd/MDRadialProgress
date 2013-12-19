@@ -78,6 +78,10 @@
 	[self addObserver:self.label forKeyPath:keyThickness options:NSKeyValueObservingOptionNew context:nil];
 }
 
+- (void)dealloc {
+    [self removeObserver:self.label forKeyPath:keyThickness];
+}
+
 #pragma mark - Setters
 
 - (void)setProgressCounter:(NSUInteger)progressCounter
